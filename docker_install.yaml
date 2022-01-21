@@ -1,0 +1,29 @@
+#this playbook is to install docker
+- name: to install docker
+  hosts: instance-2
+  become: yes
+  tasks:  
+      - name: this will install necessary packages
+        apt : 
+          name: "{{item}}"
+          state:  present
+          update_cache: yes
+        loop: 
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+      - name: Add docker gnupg
+        apt_key:
+          url:  https://download.docker.com/linux/debian/gpg    
+      - name: Add docker repository
+        apt_repository:
+          repo: deb https://download.docker.com/linux/debian buster stable"    
+      - name: install docker engine
+        apt:  
+          update_cache: yes
+          name:
+            - docker-ce
+            - docker-ce-cli
+            - containerd.io
+          state:  present
