@@ -21,7 +21,14 @@
       - name: Add docker repository
         ignore_errors: yes
         apt_repository:
-          repo: deb https://download.docker.com/linux/debian buster stable 
+          repo: deb [arch=amd64] https://download.docker.com/linux/debian buster stable 
+      - name: Index new repo into the cache
+        become: yes
+        apt:
+          name: "*"
+          state: latest
+          update_cache: yes
+          force_apt_get: yes    
       - name: install docker engine
         apt:  
           update_cache: yes
