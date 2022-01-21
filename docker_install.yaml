@@ -4,6 +4,7 @@
   become: yes
   tasks:  
       - name: this will install necessary packages
+        ignore_errors: yes
         apt : 
           name: "{{item}}"
           state:  present
@@ -14,11 +15,13 @@
           - gnupg
           - lsb-release
       - name: Add docker gnupg
+        ignore_errors: yes
         apt_key:
           url:  https://download.docker.com/linux/debian/gpg    
       - name: Add docker repository
+        ignore_errors: yes
         apt_repository:
-          repo: deb https://download.docker.com/linux/debian buster stable"    
+          repo: deb https://download.docker.com/linux/debian buster stable 
       - name: install docker engine
         apt:  
           update_cache: yes
