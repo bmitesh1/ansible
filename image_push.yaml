@@ -14,7 +14,7 @@
       git:  
         repo: https://github.com/bmitesh1/docker.git
         clone: yes
-        dest: /opt/ansible
+        dest: $HOME
       when: not p.stat.exists
     - name: To update the docker file
       git:
