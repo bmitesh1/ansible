@@ -8,7 +8,7 @@
         path: $HOME
       register: p
     - debug :
-        var: p
+        var: ansible_facts
     
     
   # name: this will clone Docker directory when docker dir doesnt exist
