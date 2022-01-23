@@ -5,7 +5,7 @@
   tasks: 
     - name: this will check whether directoryexist
       stat:
-      path: $HOME
+        path: $HOME
       register: p
     - debug :
         var: p
