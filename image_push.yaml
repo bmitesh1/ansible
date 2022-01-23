@@ -1,0 +1,24 @@
+#this is to push image to docker hub
+---
+- name: To create docker image and push it docker hub
+  hosts: instance-2
+  tasks: 
+    - name: this will check whether directoryexist
+      stat:
+      path: $HOME
+  register: p
+- debug :
+    var: p
+    
+    
+  # name: this will clone Docker directory when docker dir doesnt exist
+  #  git:  
+   #   repo: https://github.com/bmitesh1/docker.git
+    #  clone: yes
+     # dest: /opt/ansible
+    #when: not p.stat.exists
+ # - name: To update 
+#*/
+
+
+
