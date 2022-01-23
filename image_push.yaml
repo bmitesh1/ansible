@@ -9,20 +9,19 @@
       register: p
     - debug :
         var: p
-    
-    
-- name: this will clone Docker directory when docker dir doesnt exist
-  git:  
-   repo: https://github.com/bmitesh1/docker.git
-   clone: yes
-   dest: /opt/ansible
-   when: not p.stat.exists
-- name: To update the docker file
-  git:
-    repo: https://github.com/bmitesh1/docker.git
-    dest: $HOME/docker
-    update: yes 
-    
+  
+    - name: this will clone Docker directory when docker dir doesnt exist
+      git:  
+        repo: https://github.com/bmitesh1/docker.git
+        clone: yes
+        dest: /opt/ansible
+      when: not p.stat.exists
+    - name: To update the docker file
+      git:
+        repo: https://github.com/bmitesh1/docker.git
+        dest: $HOME/docker
+        update: yes 
+      when: p.stat.exists
 
 
 
