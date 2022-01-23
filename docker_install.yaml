@@ -30,6 +30,7 @@
           update_cache: yes
           force_apt_get: yes    
       - name: install docker engine
+        become: yes
         apt:  
           update_cache: yes
           name:

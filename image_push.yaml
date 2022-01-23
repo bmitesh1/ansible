@@ -6,9 +6,9 @@
     - name: this will check whether directoryexist
       stat:
       path: $HOME
-  register: p
-- debug :
-    var: p
+      register: p
+    - debug :
+        var: p
     
     
   # name: this will clone Docker directory when docker dir doesnt exist
