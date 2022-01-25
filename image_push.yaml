@@ -22,6 +22,14 @@
         dest: $HOME/docker
         update: yes 
       when: p.stat.exists
-
-
+    - name: this task will create docker image from Dockerfile
+      docker_image: 
+        name: bmitesh/devops1
+        build:
+          path: $HOME/docker
+          source: build
+          push: yes
+          state: present 
+          
+    
 
