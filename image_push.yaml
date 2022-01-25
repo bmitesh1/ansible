@@ -27,7 +27,7 @@
         name: bmitesh/devops1
         path: $HOME/docker
         push: yes
-      state: present 
+      #state: present 
           
     
 
