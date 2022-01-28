@@ -5,7 +5,7 @@
   tasks: 
     - name: this will check whether directoryexist
       stat:
-        path: '{{ WORK }}/docker'
+        path: {{ WORK }}/docker
       register: p
     - debug :
         var: p
