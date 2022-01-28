@@ -1,31 +1,31 @@
 #this is to push image to docker hub
 ---
 - name: To create docker image and push it docker hub
-  hosts: instance-2
+  hosts: localhost
   tasks: 
     - name: this will check whether directoryexist
       stat:
-        path: $HOME/docker
+        path: '{{ WORK }}/docker'
       register: p
     - debug :
         var: p
   
     - name: this will clone Docker directory when docker dir doesnt exist
       git:  
-        repo: https://github.com/bmitesh1/docker.git
+        repo: https://github.com/bmitesh1/hello-world.git
         clone: yes
-        dest: $HOME/docker
+        dest: '{{ work }}/docker'
       when: not p.stat.exists
     - name: To update the docker file
       git:
-        repo: https://github.com/bmitesh1/docker.git
-        dest: $HOME/docker
+        repo: https://github.com/bmitesh1/hello-world.git
+        dest: '{{ work }}/docker'
         update: yes 
       when: p.stat.exists
     - name: this task will create docker image from Dockerfile
       docker_image: 
         name: bmitesh/devops1
-        path: $HOME/docker
+        path: '{{ work }}/docker'
         push: yes
       #state: present 
           
