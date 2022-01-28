@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   tasks:
-    - debug: msg="{{ lookup('env','BUILD_TAG') }}"
+    - debug: msg={{WORK}}
