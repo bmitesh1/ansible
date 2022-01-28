@@ -2,6 +2,8 @@
 ---
 - name: To create docker image and push it docker hub
   hosts: localhost
+  vars:
+    WORK
   tasks: 
     - name: this will check whether directoryexist
       stat:
