@@ -8,7 +8,7 @@
       stat:
         path: '{{ item }}'
       loop:
-        - {{ JPATH }}
+        - "{{ JPATH }}"
         - '/home/bansal_mitesh' 
       register: p
     - debug :
