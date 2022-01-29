@@ -1,4 +1,8 @@
 ---
 - hosts: localhost
   tasks:
-    - debug: msg={{WORK}}
+    - name: this is to create file in ansible workspace
+      become_user:  jenkins 
+      file: 
+        path: '{{ WORK }}/docker'
+        state: directory
