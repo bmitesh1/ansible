@@ -7,7 +7,7 @@
   tasks: 
     - name: this will check whether directoryexist
       stat:
-        path: '"{{ WORK }}"/docker'
+        path: '{{ WORK }}/docker'
       register: p
     - debug :
         var: p
@@ -16,18 +16,18 @@
       git:  
         repo: https://github.com/bmitesh1/hello-world.git
         clone: yes
-        dest: '{{ work }}/docker'
+        dest: '{{ WORK }}/docker'
       when: not p.stat.exists
     - name: To update the docker file
       git:
         repo: https://github.com/bmitesh1/hello-world.git
-        dest: '{{ work }}/docker'
+        dest: '{{ WORK }}/docker'
         update: yes 
       when: p.stat.exists
     - name: this task will create docker image from Dockerfile
       docker_image: 
         name: bmitesh/devops1
-        path: '{{ work }}/docker'
+        path: '{{ WORK }}/docker'
         push: yes
       #state: present 
           
