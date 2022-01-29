@@ -9,7 +9,7 @@
         path: '{{ item }}'
       loop:
         - "{{ JPATH }}"
-        - '/home/bansal_mitesh' 
+        - {{ BPATH }} 
       register: p
     - debug :
         var: p
