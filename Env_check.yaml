@@ -6,6 +6,6 @@
       #file: 
        # path: '{{ WORK }}/docker'
         #state: directory
-    - name: to check the home var,
+    - name: to check the home var
       become_user: bansal_mitesh  
-      sh: echo "$HOME"
+      command: echo $HOME
