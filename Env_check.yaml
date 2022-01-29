@@ -9,7 +9,7 @@
        # path: '{{ WORK }}/docker'
         #state: directory
     - name: to check the home var
-      become: yes
+      #become: yes
       become_user: bansal_mitesh  
       command: echo $HOME
       register: p
