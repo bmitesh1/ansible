@@ -2,12 +2,12 @@
 ---
 - name: To create docker image and push it docker hub
   hosts: localhost
-  vars:
-    WORK
+  #vars:
+   # WORK
   tasks: 
     - name: this will check whether directoryexist
       stat:
-        path: "{{ WORK }}/docker"
+        path: '"{{ WORK }}"/docker'
       register: p
     - debug :
         var: p
