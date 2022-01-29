@@ -9,7 +9,7 @@
         path: '{{ item }}'
       loop:
         - "{{ JPATH }}"
-        - {{ BPATH }} 
+        - "{{ BPATH }}" 
       register: p
     - debug :
         var: p
