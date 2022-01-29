@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
     - name: this is to create file in ansible workspace
-     # become_user:  jenkins 
+      become_user:  bansal_mitesh 
       file: 
         path: '{{ WORK }}/docker'
         state: directory
