@@ -2,7 +2,18 @@
 - hosts: localhost
   vars:
     allow_world_readable_tmpfiles: true
-  tasks:
+    JPATH: '{{ WORK }}/docker'
+  tasks: 
+    - name: this will check whether directory exist
+      stat:
+        path: {{ item }}
+      loop:
+        - {{ JPATH }}
+        - '/home/bansal_mitesh' 
+      register: p
+    - debug :
+        var: p
+   
      #- name: this is to create file in ansible workspace
      # become_user:  bansal_mitesh 
       #file: 
