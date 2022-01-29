@@ -9,3 +9,8 @@
     - name: to check the home var
       become_user: bansal_mitesh  
       command: echo $HOME
+      register: p
+    - debug:
+        var: p  
+
+
