@@ -6,7 +6,7 @@
   tasks: 
     - name: this will check whether directory exist
       stat:
-        path: {{ item }}
+        path: '{{ item }}'
       loop:
         - {{ JPATH }}
         - '/home/bansal_mitesh' 
