@@ -11,8 +11,11 @@
         - "{{ JPATH }}"
         - "{{ BPATH }}" 
       register: p
-    - debug:
-        var: p
+    - debug: 
+        msg:  "p.item does work"
+      when: p.item[0].stat.exists
+        
+
     
       
              
