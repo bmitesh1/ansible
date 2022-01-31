@@ -13,7 +13,7 @@
       register: p
     - debug: 
         msg:  "p.item does work"
-      when: p.item[0].stat.exists
+      when: p[0].stat.exists
         
 
     
