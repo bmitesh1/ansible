@@ -11,11 +11,11 @@
         - "{{ JPATH }}"
         - "{{ BPATH }}" 
       register: p
-   # - debug :
-    #    var: p
-    - name: to check p variables
-      - debug:  
-          vars: p.item[0].stdout   
+    - debug :
+        vars: p.item[0].stdout
+    
+      
+             
 
    
      #- name: this is to create file in ansible workspace
