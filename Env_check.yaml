@@ -11,7 +11,7 @@
         - "{{ JPATH }}"
         - "{{ BPATH }}" 
       register: p
-    - debug :
+    - debug:
         vars: p
     
       
