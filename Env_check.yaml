@@ -11,20 +11,24 @@
         - "{{ JPATH }}"
         - "{{ BPATH }}" 
       register: p
-    - debug :
-        var: p.item[0]
+   # - debug :
+    #    var: p
+    - name: to check p variables
+      - debug:  
+          vars: p.item[0].stdout   
+
    
      #- name: this is to create file in ansible workspace
      # become_user:  bansal_mitesh 
       #file: 
        # path: '{{ WORK }}/docker'
         #state: directory
-    - name: to check the home var
+  #  - name: to check the home var
       #become: yes
-      become_user: bansal_mitesh  
-      command: echo $HOME
-      register: p
-    - debug:
-        var: p  
+   #   become_user: bansal_mitesh  
+    #  command: echo $HOME
+     # register: p
+    #- debug:
+     #   var: p  
 
 
