@@ -12,7 +12,7 @@
         - "{{ BPATH }}" 
       register: p
     - debug:
-        vars: p
+        var: p
     
       
              
