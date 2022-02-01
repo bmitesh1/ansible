@@ -13,7 +13,8 @@
       register: p
     - debug: 
         msg:  "p.item does work"
-      when: p[0].stat.exists
+      when: p.item == "{{ JPATH }}" and p.stat.exists
+
         
 
     
