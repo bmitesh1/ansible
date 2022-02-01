@@ -14,7 +14,7 @@
     - debug: 
         msg:  "p.item does work"
       when: item.item == "{{ JPATH }}" and item.stat.exists
-      loop: p
+      loop: "{{p}}"
 
         
 
